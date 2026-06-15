@@ -8,7 +8,7 @@ class Grade:
         
         parent_dir = pathlib.Path(__file__).parent.parent
         model_path = parent_dir / 'fine_tuned_model'
-        model_path_file = model_path / 'Qwen3-0.6B-SAG-Edu-F16.gguf'
+        model_path_file = model_path / 'gemma-3-1b-it.Q4_K_M.gguf'
 
         # Download the model
         # model_name = "Qwen/Qwen3-0.6B-GGUF"
