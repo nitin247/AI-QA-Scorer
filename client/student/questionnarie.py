@@ -1,12 +1,13 @@
 import streamlit as st
 import json
 import pathlib
-import pathlib
+import sys
 
 parent_dir = pathlib.Path(__file__).parent.parent
 file_path = parent_dir / 'model'
+sys.path.insert(0, file_path)
 
-import file_path.final_score
+import final_score
 
 def get_result_inline(qid, answer):
     """Return grading results without requiring an HTTP API call."""
