@@ -1,5 +1,5 @@
-from AI_QA_Scorer.model import cosine_similarity
-from AI_QA_Scorer.model import keywords_match
+from model import cosine_similarity
+from model import keywords_match
 import json
 import pathlib
 
