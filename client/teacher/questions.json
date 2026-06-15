@@ -1,0 +1,52 @@
+[
+  {
+    "qid": "dfd58757-3251-4fea-8637-16649c6cdf40",
+    "question_text": "What is the chemical formula for water?",
+    "rubric_must_include": "H2O",
+    "rubric_synonyms": "h2o",
+    "rubric_misconceptions": "No zero in answer",
+    "rubric_numeric_rules": "",
+    "rubric_exemplars": "",
+    "rubric_scoring_bands": ""
+  },
+  {
+    "qid": "7b9fa41f-f2f5-4955-b9f7-4e163e03bf2b",
+    "question_text": "What is the chemical formula for benzene?",
+    "rubric_must_include": "C2H6",
+    "rubric_synonyms": "c2h6",
+    "rubric_misconceptions": "None",
+    "rubric_numeric_rules": "",
+    "rubric_exemplars": "",
+    "rubric_scoring_bands": ""
+  },
+  {
+    "qid": "d6d2bbe1-3d12-4878-ba25-ca1ddacb16cb",
+    "question_text": "What is the largest planet in our solar system?",
+    "rubric_must_include": "Jupiter",
+    "rubric_synonyms": "jupiter",
+    "rubric_misconceptions": "None",
+    "rubric_numeric_rules": "",
+    "rubric_exemplars": "",
+    "rubric_scoring_bands": ""
+  },
+  {
+    "qid": "105a1e2e-48fe-4d6b-9700-51726fb25c56",
+    "question_text": "What is organic chemistry?",
+    "rubric_must_include": "Organic chemistry deals with chemicals found in living organisms like plants",
+    "rubric_synonyms": "living organisms chemistry",
+    "rubric_misconceptions": "It deals with only humans",
+    "rubric_numeric_rules": "",
+    "rubric_exemplars": "",
+    "rubric_scoring_bands": ""
+  },
+  {
+    "qid": "0a5792aa-883e-4cfa-be2c-990debb2bffa",
+    "question_text": "What is the capital of India",
+    "rubric_must_include": "delhi",
+    "rubric_synonyms": "new delhi",
+    "rubric_misconceptions": "NCR is not the capital",
+    "rubric_numeric_rules": "",
+    "rubric_exemplars": "new delhi",
+    "rubric_scoring_bands": ""
+  }
+]
