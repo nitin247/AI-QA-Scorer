@@ -55,7 +55,7 @@ else:
                 st.error("Please enter your answer before submitting.")
             else:
                 with st.spinner("Grading your answer..."):
-                    result = .get_result_inline(selected_question['qid'], answer)
+                    result = inline_grader.get_result_inline(selected_question['qid'], answer)
 
                 st.success("Answer graded successfully")
                 st.markdown("<div class='result-card'>", unsafe_allow_html=True)
