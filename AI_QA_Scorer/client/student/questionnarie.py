@@ -3,7 +3,7 @@ import json
 import pathlib
 import sys
 
-from AI_QA_Scorer.model import final_score
+from model import final_score
 
 def get_result_inline(qid, answer):
     """Return grading results without requiring an HTTP API call."""
