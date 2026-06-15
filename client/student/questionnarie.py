@@ -3,9 +3,7 @@ import json
 import pathlib
 import sys
 
-parent_dir = pathlib.Path(__file__).parent.parent.parent
-file_path = parent_dir / 'model'
-sys.path.insert(0, file_path)
+sys.path.append("/model/")
 
 from final_score import Score
 
