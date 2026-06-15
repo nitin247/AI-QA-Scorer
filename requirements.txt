@@ -3,3 +3,4 @@ sentence-transformers
 torch
 transformers
 torchvision
+llama-cpp-python
