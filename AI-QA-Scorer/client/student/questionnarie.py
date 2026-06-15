@@ -13,7 +13,7 @@ def get_result_inline(qid, answer):
 
 def get_rubrics():
     parent_dir = pathlib.Path(__file__).parent.parent
-    file_path = parent_dir / '..' / 'teacher' / 'questions.json'
+    file_path = parent_dir / 'teacher' / 'questions.json'
     if not file_path.exists():
         return []
     with open(file_path, 'r', encoding='utf-8') as f:
