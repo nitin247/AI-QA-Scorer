@@ -1,5 +1,5 @@
-from model import cosine_similarity
-from model import keywords_match
+from AI-QA-Scorer.model import cosine_similarity
+from AI-QA-Scorer.model import keywords_match
 import json
 import pathlib
 
@@ -38,7 +38,7 @@ class Score:
             score = int(sim_score_rounded * 5)
             return {'score':score, 'verdict': verdict, 'feedback': 'Score calculated based on similarity and keywords', 'missing_points': ''}
         else: 
-            from model import slm
+            from AI-QA-Scorer.model import slm
             lm = slm.Grade()
             llm_score = lm.grade(question, answer, keyword_hit, sim_score, rubric_details['rubric_must_include'], rubric_details['rubric_synonyms'], rubric_details['rubric_misconceptions'], rubric_details['rubric_numeric_rules'])
             # print(llm_score)
