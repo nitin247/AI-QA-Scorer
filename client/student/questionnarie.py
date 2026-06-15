@@ -1,7 +1,10 @@
 import streamlit as st
 import json
 import pathlib
-from ShortAnswerGrader.client.student.inline_grader import get_result_inline
+
+parent_dir = pathlib.Path(__file__).parent.parent
+file_path = parent_dir / 'client' / 'student'
+from file_path.inline_grader import get_result_inline
 
 
 def get_rubrics():
