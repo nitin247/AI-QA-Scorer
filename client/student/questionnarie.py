@@ -3,15 +3,15 @@ import json
 import pathlib
 import sys
 
-parent_dir = pathlib.Path(__file__).parent.parent
+parent_dir = pathlib.Path(__file__).parent.parent.parent
 file_path = parent_dir / 'model'
 sys.path.insert(0, file_path)
 
-import final_score
+from final_score import Score
 
 def get_result_inline(qid, answer):
     """Return grading results without requiring an HTTP API call."""
-    fs = final_score.Score()
+    fs = Score()
     return fs.get_final_score(qid, answer)
 
 
