@@ -3,9 +3,7 @@ import json
 import pathlib
 import sys
 
-sys.path.append("../../model/")
-
-from final_score import Score
+from model.final_score import Score
 
 def get_result_inline(qid, answer):
     """Return grading results without requiring an HTTP API call."""
