@@ -3,7 +3,7 @@ import json
 import pathlib
 import sys
 
-sys.path.append("/model/")
+sys.path.append("../../model/")
 
 from final_score import Score
 
