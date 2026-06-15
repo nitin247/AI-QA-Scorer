@@ -1,4 +1,4 @@
-import model.cosine_similarity, model.keywords_match
+import cosine_similarity, keywords_match
 import json
 import pathlib
 
