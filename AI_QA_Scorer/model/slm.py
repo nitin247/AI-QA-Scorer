@@ -1,6 +1,6 @@
 from llama_cpp import Llama
 import pathlib
-
+import requests
 
 class Grade:
 
@@ -28,17 +28,17 @@ class Grade:
         # LOAD model gguf from local dir
         # print(model_path)
         # quit()
-        llm = Llama(
-                model_path=str(model_path_file),
-                n_gpu_layers=-1,
-                local_files_only=True,
-                chat_format="chatml",
-                n_ctx=2048
-                )
+        # llm = Llama(
+        #         model_path=str(model_path_file),
+        #         n_gpu_layers=-1,
+        #         local_files_only=True,
+        #         chat_format="chatml",
+        #         n_ctx=2048
+        #         )
                
         # Define the messages for the chat completion, including the system and user roles
         messages = [
-        {"role": "system", "content": "You are a strict but kind answer grader for 8-13 year-olds. Return the score and verdict based on student answer accuracy."},
+        {"role": "system", "content": "You are a strict but kind answer grader for 8-13 year-olds. Return the score and verdict based on student answer accuracy. Return JSON response."},
         {"role": "user", "content": f"""
         QUESTION:
         {question}
@@ -61,29 +61,41 @@ class Grade:
         }
         ]
         
-        response_format = {
-        "type": "json_object",
-        "schema": {
-            "type": "object",
-            "properties": {
-                "score": {"type": "integer", "description": "0-5, integer, based on the student answer"},
-                "verdict": {"type": "string", "description": "Student Answer verdict: correct|incorrect|partial"},
-                "feedback": {"type": "string", "description": "≤140 chars, kind, 1-step tip"},
-                "missing_points": {"type": "string", "description": "tell any missed points in answer based on rubric"}
-                },
-            "required": ["score", "verdict", "feedback", "missing_points"],
-            }
-        }
+        # response_format = {
+        # "type": "json_object",
+        # "schema": {
+        #     "type": "object",
+        #     "properties": {
+        #         "score": {"type": "integer", "description": "0-5, integer, based on the student answer"},
+        #         "verdict": {"type": "string", "description": "Student Answer verdict: correct|incorrect|partial"},
+        #         "feedback": {"type": "string", "description": "≤140 chars, kind, 1-step tip"},
+        #         "missing_points": {"type": "string", "description": "tell any missed points in answer based on rubric"}
+        #         },
+        #     "required": ["score", "verdict", "feedback", "missing_points"],
+        #     }
+        # }
         
-        output = llm.create_chat_completion(
-        messages=messages,
-        response_format=response_format,
-        max_tokens=None,
-        temperature=0.9
-        )
-        
-        return output['choices'][0]['message']['content']
+        # output = llm.create_chat_completion(
+        # messages=messages,
+        # response_format=response_format,
+        # max_tokens=None,
+        # temperature=0.9
+        # )
 
+        # Set URL
+        url = "https://nitinplays247-google-gemma-api.hf.space/generate"
+
+        # 2. Set the prompt query parameter
+        query_params = {"prompt": messages}
+        
+        # 3. Send the POST request
+        response = requests.post(url, params=query_params)
+        
+        # 4. Parse and print the JSON response
+        data = response.json()
+        
+        # return output['choices'][0]['message']['content']
+        return data
 
 # Run
 # example = Grade()       
