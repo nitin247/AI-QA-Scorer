@@ -42,12 +42,15 @@ class Score:
             lm = slm.Grade()
             llm_score = lm.grade(question, answer, keyword_hit, sim_score, rubric_details['rubric_must_include'], rubric_details['rubric_synonyms'], rubric_details['rubric_misconceptions'], rubric_details['rubric_numeric_rules'])
             # print(llm_score)
-            data = json.loads(llm_score)
-            score = data['score']
-            verdict = data['verdict']
+            # data = json.loads(llm_score)
+            # score = data['score']
+            score = 3;
+            # verdict = data['verdict']
+            verdict = "Incorrect"
             final = 0.4 * keyword_hit + 0.3 * sim_score + 0.3 * (score/5)
             final = round((final* 5), 2)
-            return {'score':final, 'verdict': verdict, 'feedback': data['feedback'], 'missing_points': data['missing_points']}
+            # return {'score':final, 'verdict': verdict, 'feedback': data['feedback'], 'missing_points': data['missing_points']}
+            return {'score':final, 'verdict': verdict, 'feedback': llm_score, 'missing_points': ""}
 
     def get_final_score(self, qid, answer=None):
         score_details = self.calc_score(answer, qid)
