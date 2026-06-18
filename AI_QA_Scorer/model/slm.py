@@ -94,7 +94,7 @@ class Grade:
         response = requests.post(url, params=query_params)
         
         # 4. Parse and print the JSON response
-        data = response.json()
+        data = response.text
         
         # return output['choices'][0]['message']['content']
         return data
