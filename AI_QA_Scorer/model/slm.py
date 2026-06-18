@@ -88,7 +88,7 @@ class Grade:
         url = "https://nitinplays247-google-gemma-api.hf.space/generate"
 
         # 2. Set the prompt query parameter
-        query_params = {"prompt": messages}
+        query_params = {"prompt": question}
         
         # 3. Send the POST request
         response = requests.post(url, params=query_params)
