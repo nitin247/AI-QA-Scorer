@@ -97,7 +97,7 @@ class Grade:
         data = response.json()
         
         # return output['choices'][0]['message']['content']
-        return data
+        return data['result']
 
 # Run
 # example = Grade()       
