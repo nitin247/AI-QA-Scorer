@@ -46,7 +46,7 @@ class Score:
             final = 0.4 * keyword_hit + 0.3 * sim_score + 0.3 * (score/5)
             final = round((final* 5), 2)
             feedback = json.loads(llm_score)
-            return {'score':final, 'verdict': verdict, 'feedback': feedback, 'missing_points': ''}
+            return {'score':final, 'verdict': verdict, 'feedback': feedback.result, 'missing_points': ''}
 
     def get_final_score(self, qid, answer=None):
         score_details = self.calc_score(answer, qid)
