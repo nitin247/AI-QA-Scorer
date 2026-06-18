@@ -37,29 +37,29 @@ class Grade:
         #         )
                
         # Define the messages for the chat completion, including the system and user roles
-        messages = [
-        {"role": "system", "content": "You are a strict but kind answer grader for 8-13 year-olds. Return the score and verdict based on student answer accuracy. Return JSON response."},
-        {"role": "user", "content": f"""
-        QUESTION:
-        {question}
-        RUBRIC:
-        - Must include: {must_include}
-        - Acceptable synonyms: {synonyms}
-        - Misconceptions to penalize: {misconceptions}
-        - Numeric rules: {numeric_rules}
-        HEURISTICS:
-        - Keyword hits: {keywords_hit}%
-        - Embedding similarity (0-1): {sim_score}
-        STUDENT ANSWER:
-        {answer}
-        RESPONSE FORMAT:
-        "score": "integer between 0 to 5", 
-        "verdict": "correct|partial|incorrect",
-        "feedback": "≤140 chars, kind, 1-step tip",
-        "missing_points": "..."
-        """
-        }
-        ]
+        # messages = [
+        # {"role": "system", "content": "You are a strict but kind answer grader for 8-13 year-olds. Return the score and verdict based on student answer accuracy. Return JSON response."},
+        # {"role": "user", "content": f"""
+        # QUESTION:
+        # {question}
+        # RUBRIC:
+        # - Must include: {must_include}
+        # - Acceptable synonyms: {synonyms}
+        # - Misconceptions to penalize: {misconceptions}
+        # - Numeric rules: {numeric_rules}
+        # HEURISTICS:
+        # - Keyword hits: {keywords_hit}%
+        # - Embedding similarity (0-1): {sim_score}
+        # STUDENT ANSWER:
+        # {answer}
+        # RESPONSE FORMAT:
+        # "score": "integer between 0 to 5", 
+        # "verdict": "correct|partial|incorrect",
+        # "feedback": "≤140 chars, kind, 1-step tip",
+        # "missing_points": "..."
+        # """
+        # }
+        # ]
         
         # response_format = {
         # "type": "json_object",
@@ -81,6 +81,8 @@ class Grade:
         # max_tokens=None,
         # temperature=0.9
         # )
+
+        messages = "You are a strict but kind answer grader for 8-13 year-olds. Return the score and verdict based on student answer accuracy. Question: " + question + " Answer: " + answer;
 
         # Set URL
         url = "https://nitinplays247-google-gemma-api.hf.space/generate"
