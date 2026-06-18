@@ -46,11 +46,11 @@ class Score:
             # score = data['score']
             score = 3;
             # verdict = data['verdict']
-            verdict = "Incorrect"
+            verdict = 'Incorrect'
             final = 0.4 * keyword_hit + 0.3 * sim_score + 0.3 * (score/5)
             final = round((final* 5), 2)
             # return {'score':final, 'verdict': verdict, 'feedback': data['feedback'], 'missing_points': data['missing_points']}
-            return {'score':final, 'verdict': verdict, 'feedback': llm_score, 'missing_points': ""}
+            return {'score':final, 'verdict': verdict, 'feedback': llm_score, 'missing_points': ''}
 
     def get_final_score(self, qid, answer=None):
         score_details = self.calc_score(answer, qid)
